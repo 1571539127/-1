@@ -34,6 +34,7 @@ public class ChatController {
     @RequestMapping(value = "/nf", method = RequestMethod.POST)
     public RespBean sendNf(MsgContent msg) {
         if (sysMsgService.sendMsg(msg)) {
+            System.out.println(11);
             return RespBean.ok("发送成功!");
         }
         return RespBean.error("发送失败!");
